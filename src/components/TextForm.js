@@ -32,11 +32,13 @@ export default function TextForm(props) {
   };
 
   const handelCopy = () => {
+    props.showAlert();
+
     let text = document.querySelector('#myBox').value;
     document.querySelector('#myBox').select();
     navigator.clipboard.writeText(text)
       .then(() => {
-        alert("Text copied to clipboard");
+        // alert("Text copied to clipboard");
       })
 
       .catch(() => {
