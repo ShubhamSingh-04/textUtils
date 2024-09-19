@@ -15,13 +15,13 @@ export default function ModeButton({ toggleModeParent, mode }) {
   }
 
   const [mystyle, toggleStyle] = useState(mystyleBlack);
-  const btnText = mystyle.backgroundColor === 'white' ? 'Light Mode' : 'Dark Mode';
+  const btnText = mystyle.backgroundColor === 'white' ? 'Turn on Dark Mode' : 'Turn on Light Mode';
 
   useEffect(() => {
-    if (mode === 'light')
-      toggleStyle(mystyleWhite);
-    else
+    if (mode === 'dark')
       toggleStyle(mystyleBlack);
+    else
+      toggleStyle(mystyleWhite);
   }, [mode]); // Only `mode` is needed here
 
   return (

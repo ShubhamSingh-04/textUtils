@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import '../App.css';
 
 export default function TextForm(props) {
   const handelUpClick = () => {
@@ -14,18 +15,17 @@ export default function TextForm(props) {
   const handelOnChange = (event) => {
     const newText = event.target.value; // Store the new text value
 
-    if (newText === "") {
+    if (newText.trim() === "") {
       setNewText("");
       setWordCount(0);
       setCharCount(0);
     } else {
-      // Calculate word and character counts based on the new text
-      const words = newText.trim().split(/\s+/).length;
+      setWordCount(newText.trim().split(/[ ]+/).length);
+      // const words = newText.trim().split(/[ ]+/).length
       const chars = newText.length;
 
-      setWordCount(words);
+      // setWordCount(words);
       setCharCount(chars);
-      setNewText(""); // Optionally clear newText if you only want to display converted text
     }
 
     setText(newText);
@@ -34,8 +34,8 @@ export default function TextForm(props) {
   const handelCopy = () => {
     props.showAlert();
 
-    let text = document.querySelector('#myBox').value;
-    document.querySelector('#myBox').select();
+    let text = document.querySelector('#myBox-2').value;
+    document.querySelector('#myBox-2').select();
     navigator.clipboard.writeText(text)
       .then(() => {
         // alert("Text copied to clipboard");
@@ -63,25 +63,25 @@ export default function TextForm(props) {
     color: 'black'
   };
 
-  const [text, setText] = useState('Enter text Here');
-  const [newText, setNewText] = useState("The Converted Text Will Appear Here");
+  const [text, setText] = useState('');
+  const [newText, setNewText] = useState("");
 
   const [wordCount, setWordCount] = useState(0);
   const [charCount, setCharCount] = useState(text.length);
 
   const [btnStyle, setBtnStyle] = useState(btnDark);
-  useEffect(()=>{
-    if(props.mode === 'light')
+  useEffect(() => {
+    if (props.mode === 'light')
       setBtnStyle(btnLight);
     else setBtnStyle(btnDark);
   }, [props.mode]);
-  
+
   return (
     <>
       <div>
         <form className="Form">
           <label htmlFor="floatingInputInvalid"><h1>{props.heading}</h1></label>
-          <textarea className='form-control' id="myBox" rows='8' value={text} onChange={handelOnChange}></textarea>
+          <textarea className='form-control' id="myBox-1" rows='8' value={text} placeholder='Enter Text Here' onChange={handelOnChange}></textarea>
         </form>
 
         <button className="btn-primary btn mx-2" onClick={handelUpClick} style={btnStyle}>
@@ -100,7 +100,7 @@ export default function TextForm(props) {
         <button type="reset" className="btn btn-primary mx-2" style={btnStyle}>
           Reset</button>
 
-        <textarea className='form-control my-3' id="myBox" rows='8' value={newText}></textarea>
+        <textarea className='form-control my-3' id="myBox-2" rows='8' value={newText} placeholder='Converted Text Will Appear Here'></textarea>
       </div>
 
       <div className="container my-2">
