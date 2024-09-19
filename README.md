@@ -1,5 +1,43 @@
-# textUtils
-Text Utils app made with Code with harry
+# TextUtils Project
+
+**Author:** Shubham Singh
+
+## Website Name: textUtils
+
+### Purpose
+The website allows users to perform various text manipulations such as converting text to uppercase, lowercase, copying the text, removing extra spaces, and resetting the input field.
+
+### UI Design
+The interface is clean and minimalistic, making it easy to use. It has a clear header, text input area, and several buttons for text manipulation.
+
+### Key Features
+
+#### Text Conversion Options
+- **Convert to Upper Case:** Converts all input text to uppercase.
+- **Convert to Lower Case:** Changes all input text to lowercase.
+
+#### Text Management
+- **Copy Text:** Provides an easy way to copy the manipulated text to the clipboard.
+- **Remove Extra Spaces:** Automatically removes any unnecessary extra spaces between words in the text.
+
+#### Text Summary
+Below the text input area, the website displays a summary of the entered text, showing the number of words, characters, and estimated reading time.
+
+### Layout and Components
+
+- **Header:** Features navigation links such as "Home" and "About Text."
+- **Main Section:** Contains a prominent instruction: "Enter your text below," followed by a large text input box.
+- **Text Manipulation Buttons:** Below the input box are multiple buttons to convert text, copy, remove spaces, or reset.
+- **Text Output Area:** A section labeled "Converted Text Will Appear Here" is where users can view the manipulated text.
+- **Text Summary Section:** Displays statistics about the input text, helping users to gauge the content's length and readability.
+
+### Technologies
+
+- **React.js:** This interactive, dynamic text utility website is built using React, offering fast rendering and a smooth user experience. The buttons and text manipulation options are handled by React's state management, enabling real-time updates.
+- **React Router:** Uses `react-router-dom` for fast & efficient loading of components.
+- **CSS:** The website uses basic CSS styling from Bootstrap, with a focus on simplicity and clarity.
+ 
+ **-------------------------------------**
 
 # Getting Started with Create React App
 

@@ -40,7 +40,7 @@ function App() {
   return (
     <>
       <Router>
-      <Navbar title='TextUtils' />
+      <Navbar title='textUtils' aboutText='About textUtils'/>
       <Alert alert={alert} />
 
         
