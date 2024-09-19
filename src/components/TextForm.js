@@ -71,9 +71,9 @@ export default function TextForm(props) {
 
   const [btnStyle, setBtnStyle] = useState(btnDark);
   useEffect(() => {
-    if (props.mode === 'light')
-      setBtnStyle(btnLight);
-    else setBtnStyle(btnDark);
+    // if (props.mode === 'light')
+    //   setBtnStyle(btnLight);
+    setBtnStyle(btnDark);
   }, [props.mode]);
 
   return (
@@ -97,8 +97,8 @@ export default function TextForm(props) {
         <button type="button" className="btn btn-primary mx-2" onClick={removeExtraSpaces} style={btnStyle}>
           Remove Extra Spaces</button>
 
-        <button type="reset" className="btn btn-primary mx-2" style={btnStyle}>
-          Reset</button>
+        {/* <button type="reset" className="btn btn-primary mx-2" style={btnStyle}>
+          Reset</button> */}
 
         <textarea className='form-control my-3' id="myBox-2" rows='8' value={newText} placeholder='Converted Text Will Appear Here'></textarea>
       </div>

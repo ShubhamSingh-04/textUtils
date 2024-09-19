@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import './App.css';
-import ModeButton from './components/ModeButton';
+// import ModeButton from './components/ModeButton';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import About from './components/About';
 
 import {
-  BrowserRouter as Router,
+  // BrowserRouter not well suited for GitHub pages
+  HashRouter as Router,
   Routes,
   Route
 } from "react-router-dom";
@@ -17,25 +18,15 @@ function App() {
   const toggleMode = () => {
     if (mode === 'light') {
       setMode('dark');
-      document.title = "textUtils - Dark Mode";
-
-      // setInterval(()=>{
-      //   document.title = "textUtils - Dark Mode"
-      // }, 2000);
-
-      // setInterval(()=>{
-      //   document.title = "Install textUtils"
-      // }, 1500);
-
-
+      // document.title = "textUtils - Dark Mode";
     }
     else {
       setMode('light');
-      document.title = "textUtils - Light Mode";
+      // document.title = "textUtils - Light Mode";
     }
   };
 
-  const [mode, setMode] = useState('light');
+  const [mode, setMode] = useState('dark');
   const [alert, setAlert] = useState(null);
 
   const showAlert = () => {
@@ -49,7 +40,7 @@ function App() {
   return (
     <>
       <Router>
-      <Navbar title='TextUtils2' />
+      <Navbar title='TextUtils' />
       <Alert alert={alert} />
 
         
@@ -63,7 +54,7 @@ function App() {
 
         </Routes>
 
-      <ModeButton mode = {mode} toggleModeParent = {toggleMode}/>
+      {/* <ModeButton mode = {mode} toggleModeParent = {toggleMode}/> */}
       
       </Router>
     </>

@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 
 export default function ModeButton({ toggleModeParent, mode }) {
 
-  const mystyleWhite = {
-    color: 'black',
-    backgroundColor: 'white',
-    border: '2px solid black'
-  }
+  // const mystyleWhite = {
+  //   color: 'black',
+  //   backgroundColor: 'white',
+  //   border: '2px solid black'
+  // }
 
   const mystyleBlack = {
     color: 'white',
@@ -20,8 +20,8 @@ export default function ModeButton({ toggleModeParent, mode }) {
   useEffect(() => {
     if (mode === 'dark')
       toggleStyle(mystyleBlack);
-    else
-      toggleStyle(mystyleWhite);
+    // else
+    //   toggleStyle(mystyleWhite);
   }, [mode]); // Only `mode` is needed here
 
   return (
