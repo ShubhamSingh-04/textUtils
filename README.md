@@ -4,6 +4,9 @@
 [LinkedIn](https://www.linkedin.com/in/shubhamsingh3804?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bbjvf0RrmRsybYMeKzMPi5w%3D%3D)
 
 ## Website Name: textUtils
+![alt text](./readme-img/image.png)
+![alt text](./readme-img/image-1.png)
+![alt text](./readme-img/image-2.png)
 
 ### Purpose
 The website allows users to perform various text manipulations such as converting text to uppercase, lowercase, copying the text, removing extra spaces, and resetting the input field.
