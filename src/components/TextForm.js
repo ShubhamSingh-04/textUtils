@@ -83,17 +83,17 @@ export default function TextForm(props) {
           <textarea className='form-control' id="myBox-1" rows='8' value={text} placeholder='Enter Text Here' onChange={handelOnChange}></textarea>
         </form>
 
-        <button disabled = {text.length === 0} className="btn-primary btn mx-2" onClick={handelUpClick} style={btnStyle}>
+        <button disabled = {text.length === 0} className="btn-primary btn mx-2 mb-4" onClick={handelUpClick} style={btnStyle}>
           Convert to Upper Case
         </button>
 
-        <button disabled = {text.length === 0} className="btn-primary btn mx-2" onClick={handelLowClick} style={btnStyle}>
+        <button disabled = {text.length === 0} className="btn-primary btn mx-2 mb-4" onClick={handelLowClick} style={btnStyle}>
           Convert to Lower Case
         </button>
 
-        <button disabled = {text.length === 0} type="button" className="btn btn-primary mx-2" onClick={handelCopy} style={btnStyle} >Copy Text</button>
+        <button disabled = {text.length === 0} type="button" className="btn btn-primary mx-2 mb-4" onClick={handelCopy} style={btnStyle} >Copy Text</button>
 
-        <button disabled = {text.length === 0} type="button" className="btn btn-primary mx-2" onClick={removeExtraSpaces} style={btnStyle}>
+        <button disabled = {text.length === 0} type="button" className="btn btn-primary mx-2 mb-4" onClick={removeExtraSpaces} style={btnStyle}>
           Remove Extra Spaces</button>
 
         {/* <button type="reset" className="btn btn-primary mx-2" style={btnStyle}>
