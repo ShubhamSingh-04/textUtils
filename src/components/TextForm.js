@@ -3,12 +3,11 @@ import '../App.css';
 
 export default function TextForm(props) {
   const handelUpClick = () => {
-    // console.log("Upper Case was clicked");
+;
     setNewText(text.toUpperCase());
   }
 
   const handelLowClick = () => {
-    // console.log("Lower Case was clicked");
     setNewText(text.toLowerCase());
   }
 
@@ -20,7 +19,7 @@ export default function TextForm(props) {
       setWordCount(0);
       setCharCount(0);
     } else {
-      setWordCount(newText.trim().split(/[ ]+/).length);
+      setWordCount(newText.trim().split(/\s+/).length);
       // const words = newText.trim().split(/[ ]+/).length
       const chars = newText.length;
 
@@ -34,7 +33,7 @@ export default function TextForm(props) {
   const handelCopy = () => {
     props.showAlert();
 
-    let text = document.querySelector('#myBox-2').value;
+    // let text = document.querySelector('#myBox-2').value;
     document.querySelector('#myBox-2').select();
     navigator.clipboard.writeText(text)
       .then(() => {
@@ -84,17 +83,17 @@ export default function TextForm(props) {
           <textarea className='form-control' id="myBox-1" rows='8' value={text} placeholder='Enter Text Here' onChange={handelOnChange}></textarea>
         </form>
 
-        <button className="btn-primary btn mx-2" onClick={handelUpClick} style={btnStyle}>
+        <button disabled = {text.length === 0} className="btn-primary btn mx-2" onClick={handelUpClick} style={btnStyle}>
           Convert to Upper Case
         </button>
 
-        <button className="btn-primary btn mx-2" onClick={handelLowClick} style={btnStyle}>
+        <button disabled = {text.length === 0} className="btn-primary btn mx-2" onClick={handelLowClick} style={btnStyle}>
           Convert to Lower Case
         </button>
 
-        <button type="button" className="btn btn-primary mx-2" onClick={handelCopy} style={btnStyle} >Copy Text</button>
+        <button disabled = {text.length === 0} type="button" className="btn btn-primary mx-2" onClick={handelCopy} style={btnStyle} >Copy Text</button>
 
-        <button type="button" className="btn btn-primary mx-2" onClick={removeExtraSpaces} style={btnStyle}>
+        <button disabled = {text.length === 0} type="button" className="btn btn-primary mx-2" onClick={removeExtraSpaces} style={btnStyle}>
           Remove Extra Spaces</button>
 
         {/* <button type="reset" className="btn btn-primary mx-2" style={btnStyle}>
