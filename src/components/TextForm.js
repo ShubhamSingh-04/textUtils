@@ -47,7 +47,7 @@ export default function TextForm(props) {
   }
 
   const removeExtraSpaces = () => {
-    let text = document.querySelector('#myBox').value;
+    const text = document.querySelector('#myBox-1').value;
     const newT = text.split(/[ ]+/);
     setNewText(newT.join(" "));
   }
@@ -105,7 +105,6 @@ export default function TextForm(props) {
       <div className="container my-2">
         <h1>Your Text Summary</h1>
         <p><b>{wordCount} words and {charCount} characters.
-          Time taken to read: {(0.008 * wordCount).toFixed(2)} mins
         </b>
         </p>
       </div>
